@@ -1,7 +1,7 @@
 Testcontainers and Tomcat
 ========
 
-Setup for IT/E2E testing by deploying a war file to a Tomcat running with Testcontainers.
+Setup for IT/E2E testing by deploying a WAR file to a Tomcat running with Testcontainers.
 
 
 ## Usage
