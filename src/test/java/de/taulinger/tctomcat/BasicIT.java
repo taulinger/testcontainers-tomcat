@@ -42,8 +42,8 @@ public class BasicIT {
 	@Order(1)
 	@Test
 	public void getIndexHtml() throws IOException, InterruptedException {
-		 System.out.println(tomcatContainer.getLogs());
-		 System.out.println(buildURI(tomcatContainer, "index.html"));
+		// System.out.println(tomcatContainer.getLogs());
+		// System.out.println(buildURI(tomcatContainer, "index.html"));
 		var client = HttpClient.newBuilder().build();
 		var request = HttpRequest.newBuilder().uri(buildURI(tomcatContainer, "index.html"))
 				.timeout(Duration.ofMinutes(1)).GET().build();
