@@ -1,4 +1,4 @@
-Testcontainers-Tomcat
+Testcontainers and Tomcat
 ========
 
 Setup for IT/E2E testing by deploying a war file to a Tomcat running with Testcontainers.
