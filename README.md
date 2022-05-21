@@ -15,7 +15,7 @@ Steps
 ```
 git clone https://github.com/taulinger/testcontainers-tomcat.git
 ```
-- Change to the git repository and run Maven Wrapper:
+- Change to the git repository and run:
     
 ```
 ./mvnw clean verify
