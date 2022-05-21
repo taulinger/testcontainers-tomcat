@@ -1,8 +1,6 @@
 Testcontainers-Tomcat
 ========
 
-[![Build Status](https://github.com/taulinger/ccrypt-j-cli/workflows/Java%20CI/badge.svg)](https://github.com/taulinger/ccrypt-j-cli/actions/workflows/java.yml?query=branch%3Amain)
-
 Setup for IT/E2E testing by deploying a war file to a Tomcat running with Testcontainers.
 
 
