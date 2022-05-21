@@ -8,7 +8,6 @@ Setup for IT/E2E testing by deploying a war file to a Tomcat running with Testco
 
 Prerequisites
 - JDK 17 or later (https://adoptium.net/)
-- Maven 3.6 or later
 - Docker Engine
 
 Steps
@@ -16,7 +15,12 @@ Steps
 ```
 git clone https://github.com/taulinger/testcontainers-tomcat.git
 ```
-- Change to the git repository and run Maven:
+- Change to the git repository and run Maven Wrapper:
+    
 ```
-mvn test
+./mvnw clean verify
+```
+or on Windows
+```
+mvnw.cmd clean verify
 ```
