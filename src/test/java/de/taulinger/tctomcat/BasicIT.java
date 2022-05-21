@@ -24,7 +24,7 @@ import org.testcontainers.utility.MountableFile;
  * @author taulinger
  */
 @Testcontainers
-public class BasicTest {
+public class BasicIT {
 
 	final static DockerImageName TOMCAT_IMAGE = DockerImageName.parse("tomcat:10.1.0-jdk17-temurin");
 
@@ -42,8 +42,8 @@ public class BasicTest {
 	@Order(1)
 	@Test
 	public void getIndexHtml() throws IOException, InterruptedException {
-		// System.out.println(tomcatContainer.getLogs());
-		// System.out.println(buildURI(tomcatContainer, "index.html"));
+		 System.out.println(tomcatContainer.getLogs());
+		 System.out.println(buildURI(tomcatContainer, "index.html"));
 		var client = HttpClient.newBuilder().build();
 		var request = HttpRequest.newBuilder().uri(buildURI(tomcatContainer, "index.html"))
 				.timeout(Duration.ofMinutes(1)).GET().build();
