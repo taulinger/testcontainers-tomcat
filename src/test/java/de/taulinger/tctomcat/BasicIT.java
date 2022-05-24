@@ -28,15 +28,15 @@ public class BasicIT {
 
 	final static DockerImageName TOMCAT_IMAGE = DockerImageName.parse("tomcat:10.1.0-jdk17-temurin");
 
-	final static String WAR_FILE_NAME = "testcontainers-tomcat";
+	final static String TARGET_WAR_FILE_NAME = "testcontainers-tomcat";
 
 	final static MountableFile WAR_FILE = MountableFile
 			.forHostPath(Paths.get("target/testcontainers-tomcat-1.0-SNAPSHOT.war").toAbsolutePath(), 0777);
 
 	@Container
 	GenericContainer tomcatContainer = new GenericContainer(TOMCAT_IMAGE).withExposedPorts(8080).withReuse(true)
-			.withCopyFileToContainer(WAR_FILE, "/usr/local/tomcat/webapps/" + WAR_FILE_NAME + ".war")
-			.waitingFor(Wait.forHttp("/" + WAR_FILE_NAME).forStatusCode(200));
+			.withCopyFileToContainer(WAR_FILE, "/usr/local/tomcat/webapps/" + TARGET_WAR_FILE_NAME + ".war")
+			.waitingFor(Wait.forHttp("/" + TARGET_WAR_FILE_NAME).forStatusCode(200));
 
 	@DisplayName("Get /index.html")
 	@Order(1)
@@ -73,7 +73,7 @@ public class BasicIT {
 
 	static URI buildURI(GenericContainer container, String path) {
 		return UriBuilder.fromUri("http://" + container.getHost()).port(container.getMappedPort(8080))
-				.path(WAR_FILE_NAME).path(path).build();
+				.path(TARGET_WAR_FILE_NAME).path(path).build();
 	}
 
 }
